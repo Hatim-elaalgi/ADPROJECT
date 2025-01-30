@@ -1,0 +1,470 @@
+body {
+    width: auto;
+    height: auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/images/homePublic/image.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.banner{
+    width: 100%;
+    height: 50vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(/images/homePublic/image.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 98%;
+    height: 8%;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond translucide */
+    position: fixed; /* La barre reste toujours visible */
+    top: 0; /* Toujours en haut */
+    z-index: 1000; /* Assure qu'elle est au-dessus de tout le reste */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute une ombre légère */
+}
+
+
+.logo{
+    width: 200px;
+    cursor: pointer;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 10 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #060606;
+    text-transform: uppercase;
+
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    color: #009688;
+}
+
+button{
+    width: 100px ;
+    padding: 15px 0 ;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border:2px solid #009688;
+    background:transparent;
+    color:#0a0a0a;
+    cursor:pointer;
+    position:relative;
+    overflow: hidden;
+}
+
+.highlight{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacement entre Profile et LOG OUT */
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.profile-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.profile-button img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.profile-button p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    margin: 2px 0; /* Ajoute de l'espace vertical entre les éléments */
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #060606;
+    font-size: 14px;
+    padding: 5px 10px; /* Ajoute de l'espace autour du texte */
+    display: block; /* Assure que tout le lien est cliquable */
+    border-radius: 5px; /* Ajoute des coins arrondis */
+}
+
+.dropdown-menu li a:hover {
+    color: #009688;
+    font-weight: bold;
+    background-color: rgba(0, 150, 136, 0.1); /* Ajoute un effet de survol */
+}
+
+.dropdown1 {
+    position: relative;
+}
+
+.dropdown-theme {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.dropdown-theme li {
+    list-style: none;
+    margin: 2px 0; /* Ajoute de l'espace vertical entre les éléments */
+}
+
+.dropdown-theme li a {
+    text-decoration: none;
+    color: #060606;
+    font-size: 14px;
+    padding: 5px 10px; /* Ajoute de l'espace autour du texte */
+    display: block; /* Assure que tout le lien est cliquable */
+    border-radius: 5px; /* Ajoute des coins arrondis */
+}
+
+.dropdown-theme li a:hover {
+    color: #009688;
+    font-weight: bold;
+    background-color: rgba(0, 150, 136, 0.1); /* Ajoute un effet de survol */
+}
+
+
+#welcome-text {
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 80px;
+    text-align: center;
+}
+
+#articles-section {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 120px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #009688;
+    color: white;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(0, 150, 136, 0.1);
+}
+
+table tr:hover {
+    background-color: rgba(0, 150, 136, 0.3);
+}
+
+#article-details-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 120px; /* Pour qu'il soit en bas de la navbar */
+    color: white;
+    text-align: left;
+}
+
+.article-details {
+    width: 60%; /* Largeur pour le texte */
+    padding: 20px;
+}
+
+.article-details img {
+    width: 30%; /* Largeur pour l'image */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+#theme-articles-section {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 120px;
+}
+
+#tous-theme {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 120px;
+}
+
+#theme-articles-section table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#tous-theme table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#theme-articles-section table th, 
+#theme-articles-section table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#tous-theme table th, 
+#tous-theme table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#theme-articles-section table th {
+    background-color: #009688;
+    color: white;
+    text-transform: uppercase;
+}
+
+#tous-theme table th {
+    background-color: #009688;
+    color: white;
+    text-transform: uppercase;
+}
+
+#theme-articles-section table tr:nth-child(even) {
+    background-color: rgba(0, 150, 136, 0.1);
+}
+
+#tous-theme table tr:nth-child(even) {
+    background-color: rgba(0, 150, 136, 0.1);
+}
+
+#theme-articles-section table tr:hover {
+    background-color: rgba(0, 150, 136, 0.3);
+}
+ 
+#tous-theme table tr:hover {
+    background-color: rgba(0, 150, 136, 0.3);
+}
+
+.article-rating {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Style spécifique pour les étoiles dans le conteneur #rating-stars */
+#rating-stars span {
+    font-size: 30px; /* Taille des étoiles */
+    color: #ddd; /* Couleur par défaut des étoiles */
+    cursor: pointer; /* Curseur pointeur pour les rendre interactives */
+    transition: color 0.3s ease-in-out; /* Transition pour l'effet au survol */
+}
+
+#rating-stars span:hover {
+    color: #009688; /* Couleur des étoiles au survol */
+}
+
+#theme-manager-section {
+    padding: 20px;
+    text-align: center;
+    margin-top: 120px;
+}
+
+#theme-manager-section table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#theme-manager-section table th, 
+#theme-manager-section table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#theme-manager-section table th {
+    background-color: #009688;
+    color: white;
+    text-transform: uppercase;
+}
+
+#theme-manager-section table tr:hover {
+    background-color: rgba(0, 150, 136, 0.3);
+}
+
+
+
+.add-theme-btn, .delete-theme-btn {
+    padding: 5px 10px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.add-theme-btn:hover {
+    background-color: #00796b;
+}
+
+.delete-theme-btn:hover {
+    background-color: #d32f2f;
+}
+
+#add-article-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#add-article-form {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    text-align: left;
+}
+
+#add-article-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#add-article-form input, #add-article-form textarea, #add-article-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#add-article-form button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+#add-article-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond translucide */
+}

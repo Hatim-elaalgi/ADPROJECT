@@ -1,0 +1,319 @@
+/* Modern Theme Management Styles */
+:root {
+    /* Color Palette */
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --primary-light: #818cf8;
+    --secondary: #64748b;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #3b82f6;
+    --light: #f1f5f9;
+    --dark: #0f172a;
+    --white: #ffffff;
+    
+    /* Status Colors */
+    --status-en-cours: #f59e0b;
+    --status-publie: #22c55e;
+    --status-refuse: #ef4444;
+    --status-retenu: #3b82f6;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+}
+
+/* Modern Card Design */
+.theme-card {
+    background: var(--white);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    overflow: hidden;
+}
+
+.theme-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-card__header {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    padding: 1.5rem;
+    color: var(--white);
+    position: relative;
+}
+
+.theme-card__header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.theme-card__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--light);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast);
+}
+
+.stat-item:hover {
+    transform: scale(1.05);
+}
+
+.stat-item__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-item__label {
+    font-size: 0.875rem;
+    color: var(--secondary);
+    margin-top: 0.25rem;
+}
+
+/* Modern Table Design */
+.theme-table {
+    width: 100%;
+    border-spacing: 0 0.75rem;
+    border-collapse: separate;
+}
+
+.theme-table th {
+    background: var(--light);
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--secondary);
+}
+
+.theme-table tbody tr {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.theme-table tbody tr:hover {
+    transform: scale(1.01);
+    box-shadow: var(--shadow-md);
+}
+
+.theme-table td {
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-transform: capitalize;
+}
+
+.status-badge--en-cours {
+    background: var(--status-en-cours);
+    color: var(--white);
+}
+
+.status-badge--publie {
+    background: var(--status-publie);
+    color: var(--white);
+}
+
+.status-badge--refuse {
+    background: var(--status-refuse);
+    color: var(--white);
+}
+
+.status-badge--retenu {
+    background: var(--status-retenu);
+    color: var(--white);
+}
+
+/* Modern Form Elements */
+.theme-form__group {
+    margin-bottom: 1.5rem;
+}
+
+.theme-form__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.theme-form__input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--light);
+    border-radius: 0.5rem;
+    transition: all var(--transition-fast);
+    font-size: 1rem;
+}
+
+.theme-form__input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    outline: none;
+}
+
+.theme-form__input--invalid {
+    border-color: var(--danger);
+}
+
+/* Modern Buttons */
+.btn-theme {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-theme--primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-theme--primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-theme--secondary {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.btn-theme--danger {
+    background: var(--danger);
+    color: var(--white);
+}
+
+/* Modern Search Box */
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-box__input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid var(--light);
+    border-radius: 9999px;
+    transition: all var(--transition-fast);
+}
+
+.search-box__input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    outline: none;
+}
+
+.search-box__icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary);
+}
+
+/* Modern Modal Design */
+.theme-modal {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.theme-modal__header {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    padding: 1.5rem;
+    color: var(--white);
+}
+
+.theme-modal__body {
+    padding: 2rem;
+}
+
+.theme-modal__footer {
+    padding: 1.5rem;
+    background: var(--light);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-in {
+    animation: slideIn var(--transition-normal);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .theme-card__stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .theme-table thead {
+        display: none;
+    }
+    
+    .theme-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    
+    .theme-table td {
+        display: block;
+        text-align: right;
+        padding: 0.75rem 1rem;
+    }
+    
+    .theme-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+}

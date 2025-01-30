@@ -1,0 +1,388 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('/images/welcomeIMG/image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 98%;
+    height: 8%;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond translucide */
+    position: fixed; /* La barre reste toujours visible */
+    top: 0; /* Toujours en haut */
+    z-index: 1000; /* Assure qu'elle est au-dessus de tout le reste */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute une ombre légère */
+}
+
+.logo{
+    width: 200px;
+    cursor: pointer;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #060606;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    color: #009688;
+}
+
+button{
+    width: 200px ;
+    padding: 15px 0 ;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border:2px solid #009688;
+    background:transparent;
+    color:#0a0a0a;
+    cursor:pointer;
+    position:relative;
+    overflow: hidden;
+}
+
+span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+
+.section {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px auto;
+    padding: 20px;
+    background-color:rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-text {
+    flex: 1;
+    padding-right: 20px;
+    background-color: rgba(255, 255, 255, 0.8)
+}
+
+.section-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #002147;
+}
+
+.section-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+.section-image {
+    background-color: rgba(255, 255, 255, 0.8);
+    flex: 1;
+    text-align: right;
+}
+
+.section-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.themes-section {
+    width: 100%;
+    height: 90vh;
+    background-image: url('/images/welcomeIMG/image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    width: 75%;
+    height: 400px;
+    display: flex;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.slide {
+    display: none; /* Masque toutes les slides par défaut */
+    min-width: 100%;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: block; /* Affiche uniquement la slide active */
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.slide h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #002147;
+}
+
+.slide p {
+    font-size: 1.2em;
+    line-height: 1.8; /* Espacement entre les lignes */
+    color: #333;
+    max-width: 80%; /* Largeur maximale pour structurer les lignes */
+    margin: 0 auto; /* Centrer le texte */
+    text-align: justify; /* Justifier le texte */
+}
+
+
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #009688;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    width: 50px; /* Largeur et hauteur identiques pour un bouton rond */
+    height: 50px;
+    border-radius: 50%; /* Rend le bouton parfaitement rond */
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre pour l'effet visuel */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation douce */
+}
+
+button.prev:hover, button.next:hover {
+    background-color: #00695c; /* Couleur plus foncée au survol */
+    transform: translateY(-50%) scale(1.1); /* Légère augmentation de la taille */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Accentuer l'ombre au survol */
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+
+
+
+.final {
+    width: 97%;
+    height: 50vh;
+    padding: 110px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.final-content {
+    background: rgba(255, 255, 255, 0.8); /* Arrière-plan blanc translucide */
+    padding: 30px;
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    text-align: center;
+    width: 80%;
+    margin-bottom: 20px; /* Espace entre le texte et les statistiques */
+}
+
+.final-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #002147;
+}
+
+.final-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100.8%;
+    padding: 20px;
+    background-image: url('/images/welcomeIMG/image.jpg'); /* Garder l'image de fond uniquement pour les box */
+    background-size: cover;
+    background-position: center;
+}
+
+.stat-card {
+    width: 170px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Fond blanc translucide pour chaque box */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Légère animation au survol */
+}
+
+.stat-card h2 {
+    font-size: 2em;
+    color: #009688;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+.footer {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('/images/welcomeIMG/image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #b3b3b3; /* Couleur de texte adaptée */
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ffffff; /* Couleur de titre plus claire */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    color: #b3b3b3;
+}
+
+.footer-column ul li a {
+    color: #009688; /* Couleur adaptée au site */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff; /* Surlignage blanc au survol */
+    text-decoration: underline;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #009688; /* Couleur verte en accord avec le reste du site */
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #ffffff; /* Couleur blanche au survol */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    color: #b3b3b3;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9em;
+}
